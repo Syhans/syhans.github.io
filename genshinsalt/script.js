@@ -99,7 +99,7 @@ function simulate() {
     while (timeNeededEl.firstChild) {
         timeNeededEl.removeChild(timeNeededEl.firstChild);
     }
-    timeNeededEl.innerHTML = "<p>Time needed: " + timeNeeded + " ms</p>"
+    timeNeededEl.innerHTML = "<p>Simuation time needed: " + timeNeeded + " ms</p>"
 }
 
 simulateButton.addEventListener("click",simulate,false);
