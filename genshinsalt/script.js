@@ -64,8 +64,11 @@ function addResults(sample) {
             s += " + commissions"
         }
         s += ")"
-        let currentGems = document.getElementById("gems").value + (document.getElementById("fates").value * 160) + document.getElementById("crystal").value;
-        let requiredGems = metricValue * 160 - currentGems;
+        let currentGems = document.getElementById("gems").value,
+            currentFates = document.getElementById("fates").value * 160,
+            currentCrystals = document.getElementById("crystal").value;
+        
+        let requiredGems = metricValue * 160 - currentGems - currentFates - currentCrystals;
         return metricName + ": " +
             metricValue + " pulls = " +
             requiredGems + " primogems = " +
@@ -75,7 +78,6 @@ function addResults(sample) {
     appendParagraph(buildOutputString("Median", median));
     appendParagraph(buildOutputString("Max", max));
 
-    console.clear();
     for (i = 0; i < quantiles.length; i++) {
         console.log(buildOutputString(quantiles[i], quantilesResults[i]));
     }
@@ -111,6 +113,7 @@ function plot(sample) {
 }
 
 function simulate() {
+    console.clear();
     let startTime = Date.now();
 
     let startingPityCounter = parseInt(document.getElementById("pitycounter").value);
