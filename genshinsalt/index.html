@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            body {
+                background-color: #101010;
+                color: #ffffff
+            }
+        </style>
+    </head>
 <body>
 <h1>Genshin Impact Salt Simulator</h1>
 Last updated: 2021-09-03 (Patch 2.1)<br>
@@ -32,6 +40,14 @@ Based on <a href="https://www.hoyolab.com/genshin/article/497840">https://www.ho
     <label for="gems">Current Primogems:</label>
     <input type="number" id="gems" name="gems" value="0">
 </div>
+<div>
+    <label for="fates">Current Fates:</label>
+    <input type="number" id="fates" name="gems" value="0">
+</div>
+<div>
+    <label for="gems">Current Genesis Crystal:</label>
+    <input type="number" id="crystal" name="gems" value="0">
+</div>
 
 <div>    
     <label for="blessing">Blessing of the Welkin Moon active:</label>
@@ -40,8 +56,8 @@ Based on <a href="https://www.hoyolab.com/genshin/article/497840">https://www.ho
 
 <div>
     <label for="size">Sample size:</label>
-    <input type="number" id="size" name="size" value="1000000">
-    <label for="size">(higher = more accurate results, but longer simulation time)</label>
+    <input type="number" id="size" name="size" value="100000">
+    <label for="size">("Players" pull until obtaining limited 5*. Higher = more accurate results, but longer simulation time)</label>
 </div>
 
 <div>
@@ -49,6 +65,7 @@ Based on <a href="https://www.hoyolab.com/genshin/article/497840">https://www.ho
 </div>
 
 <div id="results"></div>
+<div id="histogram"></div>
 <div id="boxplot"></div>
 <div id="timeneeded"></div>
 </body>
